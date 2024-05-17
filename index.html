@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-
-         /* Estilos para a página toda */
-         *{
+        /* Estilos para a página toda */
+        * {
 
             font-size: x-large;
             background-color: black;
@@ -24,7 +24,8 @@
 
         /* Estilos para cada coluna */
         .column {
-            flex-basis: 48%; /* Largura da coluna */
+            flex-basis: 48%;
+            /* Largura da coluna */
             padding: 10px;
         }
 
@@ -41,164 +42,169 @@
 
 
         .animated-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 16px 36px;
-  border: 4px solid;
-  border-color: transparent;
-  font-size: 16px;
-  background-color: inherit;
-  border-radius: 100px;
-  font-weight: 600;
-  color: greenyellow;
-  box-shadow: 0 0 0 2px greenyellow;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 16px 36px;
+            border: 4px solid;
+            border-color: transparent;
+            font-size: 16px;
+            background-color: inherit;
+            border-radius: 100px;
+            font-weight: 600;
+            color: greenyellow;
+            box-shadow: 0 0 0 2px greenyellow;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-.animated-button svg {
-  position: absolute;
-  width: 24px;
-  fill: greenyellow;
-  z-index: 9;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
+        .animated-button svg {
+            position: absolute;
+            width: 24px;
+            fill: rgb(211, 107, 2);
+            z-index: 9;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-.animated-button .arr-1 {
-  right: 16px;
-}
+        .animated-button .arr-1 {
+            right: 16px;
+        }
 
-.animated-button .arr-2 {
-  left: -25%;
-}
+        .animated-button .arr-2 {
+            left: -25%;
+        }
 
-.animated-button .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background-color: greenyellow;
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
+        .animated-button .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-.animated-button .text {
-  position: relative;
-  z-index: 1;
-  transform: translateX(-12px);
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
+        .animated-button .text {
+            position: relative;
+            z-index: 1;
+            transform: translateX(-12px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-.animated-button:hover {
-  box-shadow: 0 0 0 12px transparent;
-  color: #212121;
-  border-radius: 12px;
-}
+        .animated-button:hover {
+            box-shadow: 0 0 0 12px transparent;
+            color: #212121;
+            border-radius: 12px;
+        }
 
-.animated-button:hover .arr-1 {
-  right: -25%;
-}
+        .animated-button:hover .arr-1 {
+            right: -25%;
+        }
 
-.animated-button:hover .arr-2 {
-  left: 16px;
-}
+        .animated-button:hover .arr-2 {
+            left: 16px;
+        }
 
-.animated-button:hover .text {
-  transform: translateX(12px);
-}
+        .animated-button:hover .text {
+            transform: translateX(12px);
+        }
 
-.animated-button:hover svg {
-  fill: #212121;
-}
+        .animated-button:hover svg {
+            fill: #212121;
+        }
 
-.animated-button:active {
-  scale: 0.95;
-  box-shadow: 0 0 0 4px greenyellow;
-}
+        .animated-button:active {
+            scale: 0.95;
+            box-shadow: 0 0 0 4px greenyellow;
+        }
 
-.animated-button:hover .circle {
-  width: 220px;
-  height: 220px;
-  opacity: 1;
-}
-
-
+        .animated-button:hover .circle {
+            width: 220px;
+            height: 220px;
+            opacity: 1;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- Primeira coluna -->
         <div class="column">
             <h2>Ensino Fundamental</h2>
             <ul>
-              
 
-<!-- Botão 7 ano -->
-                <li>
-                <button class="animated-button">
-                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                      ></path>
-                    </svg>
-                    <span class="text"><a href="https://cursos.alura.com.br/corp/pensamento-computacional-7-ano-ccm-professores-111712-p698469" target="_blank">7º ano</a></span>
-                    <span class="circle"></span>
-                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                      ></path>
-                    </svg>
-                  </button>
 
-                </li>
-<!-- Botão 8 ano -->
+                <!-- Botão 7 ano -->
                 <li>
                     <button class="animated-button">
                         <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
                         </svg>
-                        <span class="text"><a href="https://cursos.alura.com.br/corp/pensamento-computacional-8-ano-professores-111713-p698470" target="_blank">8º ano</a></span>
+                        <span class="text"><a
+                                href="https://cursos.alura.com.br/corp/pensamento-computacional-7-ano-ccm-professores-111712-p698469"
+                                target="_blank">7º ano</a></span>
                         <span class="circle"></span>
                         <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
                         </svg>
-                      </button>
-    
-    
-                
-                    </li>
-<!-- Botão 9 ano -->
-                    <li>
-                        <button class="animated-button">
-                            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                              ></path>
-                            </svg>
-                            <span class="text"><a href="https://cursos.alura.com.br/corp/pensamento-computacional-9-ano-professores-111714-p698471" target="_blank">9º ano</a></span>
-                            <span class="circle"></span>
-                            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                              ></path>
-                            </svg>
-                          </button>
-        
-        
-                    
-                        </li>                    
+                    </button>
 
-                
+                </li>
+                <!-- Botão 8 ano -->
+                <li>
+                    <button class="animated-button">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
+                        </svg>
+                        <span class="text"><a
+                                href="https://cursos.alura.com.br/corp/pensamento-computacional-8-ano-professores-111713-p698470"
+                                target="_blank">8º ano</a></span>
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
+                        </svg>
+                    </button>
+
+
+
+                </li>
+                <!-- Botão 9 ano -->
+                <li>
+                    <button class="animated-button">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
+                        </svg>
+                        <span class="text"><a
+                                href="https://cursos.alura.com.br/corp/pensamento-computacional-9-ano-professores-111714-p698471"
+                                target="_blank">9º ano</a></span>
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
+                        </svg>
+                    </button>
+
+
+
+                </li>
+
+
             </ul>
         </div>
 
@@ -206,46 +212,50 @@
         <div class="column">
             <h2>Ensino Médio</h2>
             <ul>
-<!-- Botão 1a Série -->
+                <!-- Botão 1a Série -->
                 <li>
                     <button class="animated-button">
                         <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
                         </svg>
-                        <span class="text"><a href="https://cursos.alura.com.br/corp/pensamento-computacional-1-serie-professores-111718-p698520" target="_blank">1ª série</a></span>
+                        <span class="text"><a
+                                href="https://cursos.alura.com.br/corp/pensamento-computacional-1-serie-professores-111718-p698520"
+                                target="_blank">1ª série</a></span>
                         <span class="circle"></span>
                         <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
                         </svg>
-                      </button>
-    
-    
-                
-                    </li>  
-<!-- Botão 2a Série -->
-                    <li>
-                        <button class="animated-button">
-                            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                              ></path>
-                            </svg>
-                            <span class="text"><a href="https://cursos.alura.com.br/corp/matematica-ii-2-serie-professores-111719-p698523" target="_blank">2ª série</a></span>
-                            <span class="circle"></span>
-                            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                              ></path>
-                            </svg>
-                          </button>
-        
-        
-                    
-                        </li>  
+                    </button>
+
+
+
+                </li>
+                <!-- Botão 2a Série -->
+                <li>
+                    <button class="animated-button">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
+                        </svg>
+                        <span class="text"><a
+                                href="https://cursos.alura.com.br/corp/matematica-ii-2-serie-professores-111719-p698523"
+                                target="_blank">2ª série</a></span>
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
+                        </svg>
+                    </button>
+
+
+
+                </li>
 
 
 
@@ -255,10 +265,11 @@
 
 
 
-                
-                
+
+
             </ul>
         </div>
     </div>
 </body>
+
 </html>
