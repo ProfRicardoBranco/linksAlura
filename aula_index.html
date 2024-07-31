@@ -5,34 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exibir Código</title>
     <style>
-        pre {
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 20px;
             background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            overflow: auto; /* Para permitir rolagem se o código for muito longo */
+            position: fixed; /* Fixa os botões na parte superior */
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Garante que os botões fiquem acima de outros elementos */
         }
         button {
-            margin-top: 10px;
             padding: 10px 15px;
             background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            flex: 1; /* Faz com que os botões ocupem espaço igual */
+            margin: 0 10px; /* Espaçamento entre os botões */
         }
         button:hover {
             background-color: #0056b3;
         }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: auto; /* Para permitir rolagem se o código for muito longo */
+            margin-top: 70px; /* Adiciona margem para não sobrepor os botões */
+        }
     </style>
 </head>
 <body>
-    <button onclick="copyToClipboard('codeBlock1')">Copiar Código index.html</button>
-    <button onclick="copyToClipboard('codeBlock2')">Copiar Código style.css</button>
-    <button onclick="copyToClipboard('codeBlock3')">Copiar Código header.css</button>
-    
-    <h1>Código da página index.html</h1>
+    <div class="button-container">
+        <button onclick="copyToClipboard('codeBlock1')">Copiar HTML</button>
+        <button onclick="copyToClipboard('codeBlock2')">Copiar CSS</button>
+        <button onclick="copyToClipboard('codeBlock3')">Copiar Header CSS</button>
+    </div>
 
+    <h1>Código da página index.html</h1>
     <pre id="codeBlock1">
 <code>
 &lt;!DOCTYPE html&gt;
@@ -82,10 +103,8 @@
 &lt;/html&gt;
 </code>
     </pre>
-    
 
     <h1>Código do arquivo style.css</h1>
-        
     <pre id="codeBlock2">
 <code>
 @import url("styles/header.css");
@@ -104,10 +123,8 @@ h1 {
 }
 </code>
     </pre>
-    
 
     <h1>Código do arquivo header.css que fica dentro da pasta styles</h1>
-    
     <pre id="codeBlock3">
 <code>
 .cabeçalho__menu-hamburguer {
@@ -144,7 +161,6 @@ h1 {
 }
 </code>
     </pre>
-    <button onclick="copyToClipboard('codeBlock3')">Copiar Código</button>
 
     <script>
         function copyToClipboard(codeBlockId) {
