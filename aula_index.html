@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exibir Código HTML</title>
+    <title>Exibir Código</title>
     <style>
         pre {
             background-color: #f4f4f4;
@@ -12,11 +12,23 @@
             border-radius: 5px;
             overflow: auto; /* Para permitir rolagem se o código for muito longo */
         }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <h1>Código da página index.html</h1>
-        <pre>
+    <pre id="codeBlock1">
 <code>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="pt-br"&gt;
@@ -65,69 +77,77 @@
 &lt;/html&gt;
 </code>
     </pre>
+    <button onclick="copyToClipboard('codeBlock1')">Copiar Código</button>
 
-    <h1>Código do arquivo styles.css</h1>
-        <pre>
+    <h1>Código do arquivo style.css</h1>
+    <pre id="codeBlock2">
 <code>
+@import url("styles/header.css");
 
-        @import url("styles/header.css");
-        
-        :root {
-            --cor-de-fundo: #EBECEE;
-            --branco: #FFFFFF;
-        }
-        
-        body {
-            background-color: var(--cor-de-fundo);
-        }
-        
-        h1 {
-            background-color: white;
-        }
+:root {
+    --cor-de-fundo: #EBECEE;
+    --branco: #FFFFFF;
+}
 
+body {
+    background-color: var(--cor-de-fundo);
+}
+
+h1 {
+    background-color: white;
+}
 </code>
-</pre>
+    </pre>
+    <button onclick="copyToClipboard('codeBlock2')">Copiar Código</button>
 
-
-<h1>Código do arquivo styles.css que fica dentro da pasta styles</h1>
-<pre>
+    <h1>Código do arquivo header.css que fica dentro da pasta styles</h1>
+    <pre id="codeBlock3">
 <code>
-    .cabeçalho__menu-hamburguer {
-        width: 24px;
-        height: 24px;
-        display: inline-block;
-        background-image: url("../img/Menu.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    
-    .cabeçalho {
-        background-color: var(--branco);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-    }
-    
-    
-    .container {
-        display: flex;
-        align-items: center;
-    }
-    .container__imagem {
-        padding: 1em;
-    }
-    .lista-menu{
-       display: none;
-       position: absolute;
-       top: 100%; 
-    }
-    .container__botao:checked~.lista-menu{/*O erro estava aqui*/
-        display: block;
-    }
+.cabeçalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cabeçalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+.container__imagem {
+    padding: 1em;
+}
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+}
+.container__botao:checked ~ .lista-menu {
+    display: block;
+}
 </code>
-</pre>
+    </pre>
+    <button onclick="copyToClipboard('codeBlock3')">Copiar Código</button>
 
-
+    <script>
+        function copyToClipboard(codeBlockId) {
+            const codeBlock = document.getElementById(codeBlockId).innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Código copiado para a área de transferência!');
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
