@@ -16,6 +16,7 @@ programas=(
     transmission-common
     transmission-gtk
     warpinator
+    thunderbird
 )
 
 # Remove os programas especificados
@@ -36,4 +37,3 @@ echo "Processo concluído."
 
 # Copiar perfil para a pasta skel
 sudo cp -a ~/.* /etc/skel/
-sudo cp -a ~/ /etc/skel/

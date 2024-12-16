@@ -17,3 +17,15 @@
 <h3>Execute o script:</h3>
 
 </p>sudo ./scriptRemoverProgramas.sh</p>
+<h3> TESTANDO - acho que o script já vai ativar a conta de convidado agora, senão usar:</h3>
+<p>sudo xed /etc/lightdm/lightdm.conf
+</p>
+<p>Adicionar as linhas no arquivo</p>
+
+echo "autologin-guest=true"
+echo "autologin-user-timeout=0"
+echo "allow-guest=true"
+
+<h3>Copiar a pasta para os outros perfis</h3>
+# Copiar perfil para a pasta skel
+sudo cp -a ~/.* /etc/skel/
