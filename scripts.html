@@ -1,31 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripts Ricardo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h3 {
+            color: #555;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
 <h1>Scripts Ricardo</h1>
 
-<h3>Primeiro baixar o chrome e modificar o atalho</h3>
-<p>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-</p>
-<p>sudo gdebi google-chrome*
-</p>
-<p>modificar o atalho</p>
-<p>adicionar favorito na BARRA</p>
-<h3>Em janela de início de sessão autorizar convidado e reiniciar o computador </h3>
-<h3> <a href="scriptRemoverProgramas.sh"> Baixe o script modificado.</a></h3>
-<p>wget https://ricardobranco.vercel.app/scriptRemoverProgramas.sh</p>
+<h3>1. Baixar o Google Chrome e modificar o atalho</h3>
+<pre><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo gdebi google-chrome*
+</code></pre>
+<p>Modificar o atalho e adicionar aos favoritos na barra.</p>
 
-<h3>Dê permissão de execução novamente, se necessário:</h3>
-</p>chmod +x scriptRemoverProgramas.sh</p>
+<h3>2. Autorizar convidado e reiniciar o computador</h3>
+<p><a href="scriptRemoverProgramas.sh">Baixe o script modificado.</a></p>
+<pre><code>wget https://ricardobranco.vercel.app/scriptRemoverProgramas.sh
+chmod +x scriptRemoverProgramas.sh
+sudo ./scriptRemoverProgramas.sh
+</code></pre>
 
-<h3>Execute o script:</h3>
+<h3>3. Testando - Ativar a conta de convidado (se necessário)</h3>
+<p>Se o script não ativar a conta de convidado, use:</p>
+<pre><code>sudo xed /etc/lightdm/lightdm.conf
+</code></pre>
+<p>Adicionar as seguintes linhas no arquivo:</p>
+<pre><code>autologin-guest=true
+autologin-user-timeout=0
+allow-guest=true
+</code></pre>
 
-</p>sudo ./scriptRemoverProgramas.sh</p>
-<h3> TESTANDO - acho que o script já vai ativar a conta de convidado agora, senão usar:</h3>
-<p>sudo xed /etc/lightdm/lightdm.conf
-</p>
-<p>Adicionar as linhas no arquivo</p>
+<h3>4. Copiar a pasta para os outros perfis</h3>
+<pre><code>sudo cp -a ~/.* /etc/skel/
+</code></pre>
 
-echo "autologin-guest=true"
-echo "autologin-user-timeout=0"
-echo "allow-guest=true"
-
-<h3>Copiar a pasta para os outros perfis</h3>
-# Copiar perfil para a pasta skel
-sudo cp -a ~/.* /etc/skel/
+</body>
+</html>
