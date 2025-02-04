@@ -54,21 +54,27 @@ sudo ./scriptRemoverProgramas.sh
 <p>Se o script não ativar a conta de convidado, use:</p>
 <pre><code>sudo xed /etc/lightdm/lightdm.conf
 </code></pre>
-<p>Adicionar as seguintes linhas no arquivo:</p>
-<pre><code>autologin-guest=true
-autologin-user-timeout=0
-allow-guest=true
+<p>Deixar o arquivo assim:</p>
+<pre><code>[Seat:*]
+
+    autologin-guest=true
+    autologin-user-timeout=0
+    allow-guest=true
 </code></pre>
 
-<h3>4. Copiar a pasta para os outros perfis</h3>
+<h3>4. Criar uma conta de estudante e copiar a pasta para os outros perfis</h3>
 
-<pre><code>sudo cp -a ~/.bashrc ~/.profile ~/.config /etc/skel/
+<pre><code>
+
+    Crie a conta do estudante e depois os comandos:
+    
+    sudo rsync -a /home/estudante/ /etc/skel/
+
+
+    sudo chmod -R 755 /etc/skel
+    sudo chown -R root:root /etc/skel
 </code></pre>
 
-
-Comando antigo:
-<pre><code>sudo cp -a ~/.* /etc/skel/
-</code></pre>
 
 </body>
 </html>
