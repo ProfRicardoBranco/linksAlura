@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens Lado a Lado (Flexbox)</title>
+    <style>
+        /* Estilo para o contêiner que segura as duas imagens */
+        .container-imagens {
+            display: flex; /* Ativa o layout flexbox */
+            justify-content: center; /* Centraliza as imagens horizontalmente no contêiner */
+            gap: 20px; /* Adiciona um espaço de 20px entre as imagens */
+            padding: 20px;
+        }
+
+        /* Estilo básico para garantir que as imagens não ultrapassem o contêiner */
+        .container-imagens img {
+            max-width: 100%; /* Garante que a imagem não estoure o contêiner em telas pequenas */
+            height: auto; /* Mantém a proporção da imagem */
+            /* Se quiser que ambas as imagens tenham a mesma largura visual: */
+            /* width: 300px; */ 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Minhas Duas Imagens</h1>
+
+    <div class="container-imagens">
+        <img src="Comprovante de pagamento correios.jpg" alt="Comprovante Correios Completo">
+        <img src="EtiquetaCorreioComEndereco.jpg" alt="Etiqueta Correios com Endereço">
+    </div>
+
+</body>
+</html>
