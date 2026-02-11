@@ -3,78 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scripts Ricardo</title>
+    <title>Scripts Ricardo - Automação Linux</title>
     <style>
+        /* Base e Cores do Modo Escuro */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
             line-height: 1.6;
-            margin: 20px;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
+        .container {
+            max-width: 850px;
+            width: 100%;
+        }
+
         h1 {
-            color: #333;
+            color: #00aaff;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
+
         h3 {
-            color: #555;
+            color: #00aaff;
+            background-color: #1e1e1e;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 5px solid #00aaff;
+            margin-top: 30px;
         }
+
         p {
-            margin: 10px 0;
+            margin: 15px 0;
+            color: #b0b0b0;
         }
+
+        /* Estilização de Código e Blocos de Comando */
         code {
-            background-color: #f4f4f4;
-            padding: 2px 4px;
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 2px 6px;
             border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
         }
+
         pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border-radius: 4px;
+            background-color: #1e1e1e;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
             overflow-x: auto;
+            border: 1px solid #333;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Links e Botões */
+        a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #00aaff;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #0088cc;
+            text-decoration: none;
+        }
+
+        .highlight-box {
+            background-color: #252525;
+            padding: 15px;
+            border-left: 4px solid #ffcc00;
+            margin: 15px 0;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
 
-<h1>Scripts Ricardo</h1>
+<div class="container">
+    <h1>Scripts Ricardo</h1>
 
-<h3>1. Baixar o Google Chrome e modificar o atalho</h3>
-<pre><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    <h3>1. Baixar o Google Chrome e modificar o atalho</h3>
+    <pre><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo gdebi google-chrome*
-</code></pre>
-<p>Modificar o atalho e adicionar aos favoritos na barra.</p>
-<p>/usr/bin/google-chrome-stable %U --password-store=basic --incognito https://educacao.pr.gov.br/iniciar</p>
+    </code></pre>
+    <p>Modificar o atalho e adicionar aos favoritos na barra:</p>
+    <pre><code>/usr/bin/google-chrome-stable %U --password-store=basic --incognito https://educacao.pr.gov.br/iniciar</code></pre>
 
-<h3>2. Autorizar convidado e reiniciar o computador</h3>
-<p><a href="scriptRemoverProgramas.sh">Baixe o script modificado.</a></p>
-<pre><code>wget https://ricardobranco.vercel.app/scriptRemoverProgramas.sh
+    <h3>2. Autorizar convidado e reiniciar o computador</h3>
+    <p>Clique abaixo para baixar ou use os comandos no terminal:</p>
+    <a href="scriptRemoverProgramas.sh" class="download-btn">Baixar scriptRemoverProgramas.sh</a>
+
+    <pre><code>wget https://ricardobranco.vercel.app/scriptRemoverProgramas.sh
 chmod +x scriptRemoverProgramas.sh
-sudo ./scriptRemoverProgramas.sh
-</code></pre>
+sudo ./scriptRemoverProgramas.sh</code></pre>
 
-<h3>3. Testando - Ativar a conta de convidado (se necessário)</h3>
-<p>Se o script não ativar a conta de convidado, use:</p>
-<pre><code>sudo xed /etc/lightdm/lightdm.conf
-</code></pre>
-<p>Deixar o arquivo assim:</p>
-<pre><code>[Seat:*]
+    <h3>3. Testando - Ativar a conta de convidado (se necessário)</h3>
+    <p>Se o script não ativar a conta de convidado, use:</p>
+    <pre><code>sudo xed /etc/lightdm/lightdm.conf</code></pre>
+    <p>Deixe o arquivo com esta configuração:</p>
+    <pre><code>[Seat:*]
+autologin-guest=true
+autologin-user-timeout=0
+allow-guest=true</code></pre>
 
-    autologin-guest=true
-    autologin-user-timeout=0
-    allow-guest=true
-</code></pre>
+    <h3>4. Configurações de Perfil e Certificado</h3>
+    <div class="highlight-box">
+        <strong>Importante:</strong> Antes de copiar o perfil, realize estas etapas na conta do estudante:
+        <ol>
+            <li><strong>Certificado de Segurança:</strong> <a href="https://drive.celepar.pr.gov.br/s/RiMXrmiSCHMcj7Z/download/filtroweb.seed.parana-2025.cer">Baixar Certificado Celepar 2025</a> (Instale no Chrome em: Configurações > Privacidade e Segurança > Segurança > Gerenciar Certificados).</li>
+            <li><strong>Inicialização:</strong> Configure os aplicativos de inicialização para abrir o Chrome automaticamente com o site inicial desejado.</li>
+        </ol>
+    </div>
 
-<h3>4. Criar uma conta de estudante e copiar a pasta para os outros perfis</h3>
-
-<pre><code>
-
-    Crie a conta do estudante e depois os comandos:
-    
-    sudo rsync -a /home/estudante/ /etc/skel/
-
-
-    sudo chmod -R 755 /etc/skel
-    sudo chown -R root:root /etc/skel
-</code></pre>
-
+    <p>Após configurar tudo no usuário "estudante", execute os comandos abaixo para replicar para os novos perfis:</p>
+    <pre><code>sudo rsync -a /home/estudante/ /etc/skel/
+sudo chmod -R 755 /etc/skel
+sudo chown -R root:root /etc/skel</code></pre>
+</div>
 
 </body>
 </html>
